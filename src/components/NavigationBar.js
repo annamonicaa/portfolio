@@ -15,10 +15,10 @@ const NavigationBar = () => {
     return (
         <>
             <div className='navbar' id='navbar'>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/projek">Project</Link>
-                <Link to="/tools">Tools</Link>
+                <Link to="/portfolio/">Home</Link>
+                <Link to="/portfolio//about">About</Link>
+                <Link to="/portfolio/projek">Project</Link>
+                <Link to="/portfolio/tools">Tools</Link>
                 <a href='javascript:void(0)' onClick={toggle} className='icon'><i className='fa fa-bars'></i></a>
             </div>
             
