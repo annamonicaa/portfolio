@@ -4,25 +4,25 @@ const Projek = () => {
     const listProject = [
         {
             title: "tic-tac-toe",
-            image: "/image/prj-img-1.png",
+            image: "./image/prj-img-1.png",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
             link: "https://annamonicaa.github.io/tic-tac-toe/"
         },
         {
             title: "Nature Republic",
-            image: "/image/prj-img-2.png",
+            image: "./image/prj-img-2.png",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             link: "https://annamonicaa.github.io/"
         },
         {
             title: "tic-tac-toe",
-            image: "/image/prj-img-2.png",
+            image: "./image/prj-img-2.png",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             link: "https://annamonicaa.github.io/tic-tac-toe/"
         },
         {
             title: "Nature Republic",
-            image: "/image/prj-img-2.png",
+            image: "./image/prj-img-2.png",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             link: "https://annamonicaa.github.io/"
         },
