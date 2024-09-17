@@ -16,9 +16,9 @@ const NavigationBar = () => {
         <>
             <div className='navbar' id='navbar'>
                 <Link to="/portfolio/">Home</Link>
-                <Link to="/portfolio//about">About</Link>
-                <Link to="/portfolio/projek">Project</Link>
-                <Link to="/portfolio/tools">Tools</Link>
+                <Link to="/portfolio/about/">About</Link>
+                <Link to="/portfolio/projek/">Project</Link>
+                <Link to="/portfolio/tools/">Tools</Link>
                 <a href='javascript:void(0)' onClick={toggle} className='icon'><i className='fa fa-bars'></i></a>
             </div>
             
