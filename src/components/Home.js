@@ -24,7 +24,7 @@ const Home = () => {
             </div>
             <div className='flex-container'>
                 <div className='flex-item-left'>
-                    <img src="/image/foto.png" width="80%" height="auto" /><br />
+                    <img src={"./image/foto.png"} width="80%" height="auto" /><br />
                 </div>
                 <div className="flex-item-right">
                     <h2 className='h2'>Anna Monica</h2>
