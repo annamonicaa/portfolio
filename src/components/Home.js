@@ -22,7 +22,7 @@ const Home = () => {
             <a target='_blank' href='https://drive.google.com/file/d/1ufU6PTL8tFiqI-V1e2Y34d-Tb_XFFFvW/view?usp=sharing'>Check out my CV!</a>
             </div>
             </div>
-            <div className='flex-container'>
+            {/* <div className='flex-container'>
                 <div className='flex-item-left'>
                     <img src={"./image/foto.png"} width="80%" height="auto" /><br />
                 </div>
@@ -32,7 +32,7 @@ const Home = () => {
                             Introduce, my name is Anna Monica. I'm a graduated from Information Systems program study at Universitas Advent Indonesia
                             <span><a href="/about">...more about me</a></span>
                     </div>
-            </div>
+            </div> */}
         </>
     )
 }
