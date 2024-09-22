@@ -150,6 +150,10 @@
 
 
 /* Repeat Use */
+.margin {
+  margin: 0 2em;
+}
+
 h1 {
  color: #122253;
  text-align: center;
@@ -212,4 +216,56 @@ a {
   .flex-item-right, .flex-item-left {
     flex: 100%;
   }
+}
+
+.collapsible {
+  background-color: #f3e5be;
+  color: #122253;
+  border: none;
+  border-bottom: 0.5px solid #122253;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  
+}
+
+/* 
+.collapsible .icon {
+  text-align: end;
+} */
+
+.active, .collapsible:hover {
+  background-color: #122253;
+  color: #f3e5be;
+}
+
+.collapsible:after {
+  content: '\f078';
+  font-family: "Font Awesome 5 Free";
+  color: #122253;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+
+.active:after {
+  content: '\f077';
+  color: #f3e5be;
+}
+
+.collapsible:hover:after {
+  color: #f3e5be;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f7eed8;
+  border-bottom: 0.5px solid #122253;
 }

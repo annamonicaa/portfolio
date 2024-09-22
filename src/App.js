@@ -1,63 +1,61 @@
 import './App.css';
-import React, { useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
-import NavigationBar from './components/NavigationBar';
+import React, { useRef, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Projek from './components/Project';
-import Tools from './components/Tools';
+import ProjectQA from './components/ProjectQA';
 
 function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+
   const sections = [
-    { ref: useRef(null), label: "About", component: <About /> },
-    { ref: useRef(null), label: "Project", component: <Projek /> },
+    { ref: homeRef, label: "Home", component: <Home /> },
+    { ref: aboutRef, label: "About", component: <About /> },
+    { ref: projectsRef, label: "Project", component: <Projek /> },
   ];
 
   const scrollToSection = (index) => {
     sections[index].ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const toggle = () => {
-    var x = document.getElementById('navbar');
-    if (x.className === "navbar") {
-        x.className += " responsive";
-    } else {
-        x.className = "navbar"
-    }
-  }
+  const Navbar = () => {
+    const [isResponsive, setIsResponsive] = useState(false);
 
-  return (
-    <>
-      <div className='navbar' id='navbar'>
-        <a>Home</a>
+    const toggle = () => {
+      setIsResponsive(!isResponsive);
+    };
+
+    return (
+      <div className={`navbar ${isResponsive ? 'responsive' : ''}`} id='navbar'>
         {sections.map((section, index) => (
           <a key={index} onClick={() => scrollToSection(index)}>
             {section.label}
           </a>
         ))}
-        <a href='javascript:void(0)' onClick={toggle} className='icon'><i className='fa fa-bars'></i></a>
+        <Link to="/project-qa">Project QA</Link> {/* This will navigate to ProjectQA route */}
+        <a onClick={toggle} className='icon'>
+          <i className='fa fa-bars'></i>
+        </a>
       </div>
-      <div><Home /></div>
+    );
+  };
+
+  return (
+    <Router>
+      <Navbar />
       {sections.map((section, index) => (
         <div key={index} ref={section.ref}>
           {section.component}
         </div>
       ))}
-      {/* <div ref={aboutRef}><About /></div>
-      <div ref={projekRef}><Projek /></div> */}
-      {/* <Router>
-      <NavigationBar />
+      
       <Routes>
-        <Route exact path="/portfolio/" element={<Home />} />
-        <Route path="/portfolio/about" element={<About />} />
-        <Route path="/portfolio/projek" element={<Projek />} />
-        <Route path="/portfolio/tools" element={<Tools />} />
+        <Route path="/project-qa" element={<ProjectQA />} />
       </Routes>
-    </Router> */}
-    {/* <Home /> */}
-
-    </>
+    </Router>
   );
 }
 
