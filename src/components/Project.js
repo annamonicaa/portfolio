@@ -26,6 +26,12 @@ const Projek = () => {
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             link: "https://github.com/annamonicaa/absensisekolahsabat"
         },
+        {
+            title: "Aplikasi Cuaca",
+            image: "./image/prj-img-4.png",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            link: "https://annamonicaa.github.io/weather-app/"
+        },
     ];
 
     const projectTest = [
