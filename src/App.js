@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Projek from './components/Project';
-import ProjectQA from './components/ProjectQA';
 import Footer from './components/Footer';
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
             {section.label}
           </a>
         ))}
-        <Link to="/project-qa">Project QA</Link> {/* This will navigate to ProjectQA route */}
+
         <a onClick={toggle} className='icon'>
           <i className='fa fa-bars'></i>
         </a>
@@ -53,9 +52,9 @@ function App() {
         </div>
       ))}
 
-      <Routes>
+      {/* <Routes>
         <Route path="/project-qa" element={<ProjectQA />} />
-      </Routes>
+      </Routes> */}
       <Footer />
     </Router>
 
