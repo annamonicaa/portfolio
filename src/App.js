@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Projek from './components/Project';
 import ProjectQA from './components/ProjectQA';
+import Footer from './components/Footer';
 
 function App() {
   const homeRef = useRef(null);
@@ -51,11 +52,13 @@ function App() {
           {section.component}
         </div>
       ))}
-      
+
       <Routes>
         <Route path="/project-qa" element={<ProjectQA />} />
       </Routes>
+      <Footer />
     </Router>
+
   );
 }
 

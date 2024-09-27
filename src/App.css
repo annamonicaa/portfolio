@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -38,9 +42,15 @@
 }
 
 .navbar {
+  /* position: fixed; */
+  left: 0;
+  right: 0;
+  top: 0;
   overflow: hidden;
   background-color: #122253;
   cursor: pointer;
+  box-shadow: 0 4px 8px #081027;
+  z-index: 2;
 }
 
 .navbar a {
@@ -140,14 +150,79 @@
 }
 
 .flex-item img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 12px 12px 0 0;
   border-bottom: solid 1px #122253;
+  max-height: 20em;
+}
+
+.qaLink {
+  color: #122253;
+}
+
+/* .prjQaImg {
+ 
+} */
+
+.modal {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
 
+.modal-content {
+  margin: auto;
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  max-height: 700px;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
 
+.imgDesc {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc !important;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Footer */
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #122253;
+  color: #f7eed8;
+  text-align: center;
+  padding: 10px;
+}
 
 /* Repeat Use */
 .margin {
@@ -211,7 +286,6 @@ a {
   color: #122253b4;
 }
 
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 800px) {
   .flex-item-right, .flex-item-left {
     flex: 100%;

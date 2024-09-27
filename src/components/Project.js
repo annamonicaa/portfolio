@@ -41,19 +41,9 @@ const Projek = () => {
             desc: "Projek yang dikerjakan saat magang di PT Swadharma Duta Data sebagai Quality Assurance. Saya diberikan tanggung jawab untuk membantu membuat scenario testing dan ikut serta dalam pengujian beberapa modul",
             subDesc: "Di bawah ini adalah scenario testing yang saya buat.",
             link: "https://docs.google.com/spreadsheets/d/18BD3mDYjpNlu_D_mIOkpdcgOK6TmKbd0WdoC-jqtEcQ/edit?usp=sharing",
-            imgTitle: "Image Title 1",
-            img: "image1.jpg",
-            imgDesc: "Description for image 1"
-        },
-        {
-            id: 2,
-            title: "Another Project",
-            desc: "Description of project 2",
-            subDesc: "Subtitle of project 2",
-            link: "https://example.com",
-            imgTitle: "",
-            img: "",
-            imgDesc: "Description for image 2"
+            imgTitle: "Beberapa dokumentasi projek:",
+            img: ["./image/prj-qa-1.png", "./image/prj-qa-2.jpeg", "./image/prj-qa-3.png"],
+            imgDesc: ["Tampilan dari Aplikasi Web", "Tampilan dari Apllikasi Mobile", "Sebagian dari bug yang kami temukan (Yang masih boleh ditunjukkan)"]
         },
     ];
 
@@ -67,28 +57,53 @@ const Projek = () => {
             }
         }
 
-    const ProjectQA = ({ desc, subDesc, link, imgTitle, img, imgDesc }) => {
+        const ProjectQA = ({ desc, subDesc, link, imgTitle, img, imgDesc }) => {
+            const [isModalOpen, setIsModalOpen] = useState(false);
+            const [modalImgSrc, setModalImgSrc] = useState('');
+            const [modalImgDesc, setModalImgDesc] = useState('');
+
+            const openModal = (imgSrc, imgAlt) => {
+                console.log("Gambar diklik:", imgSrc, imgAlt);
+                setModalImgSrc(imgSrc);
+                setModalImgDesc(imgAlt);
+                setIsModalOpen(true);
+            }
+
+            const closeModal = () => {
+                setIsModalOpen(false);
+            }
+
+            return (
+                <>
+                    <p>{desc}</p>
+                    <p>{subDesc}</p>
+                    <a className='qaLink' href={link} target="_blank" rel="noopener noreferrer">Visit Link</a>
+                    {imgTitle && <h3>{imgTitle}</h3>}
+                    <div className='flex-container'>
+                        {Array.isArray(img) && img.length > 0 && imgDesc.length > 0 && (
+                            img.map((imgSrc, index) => (
+                                <div className='flex-item' key={index}>
+                                    <img id='image' onClick={() => openModal(imgSrc, imgDesc[index])} className='prjQaImg' src={imgSrc} alt={imgDesc[index]} />
+                                    <p>{imgDesc[index]}</p>
+                                </div>
+                            ))
+                        )}
+                    </div>
+                    {isModalOpen && (
+                        <div className='modal'>
+                            <span className='close' onClick={closeModal}>&times;</span>
+                            <img className='modal-content' id='img01' src={modalImgSrc} alt={modalImgDesc} />
+                            {/* <div id='imgDesc'>{modalImgDesc}</div> */}
+                        </div>
+                    )}
+                </>
+            );
+        }
+        
         return (
             <>
             <div>
-                <p>{desc}</p>
-                <p>{subDesc}</p>
-                <a href={link} target="_blank">Visit Link</a>
-                <h3>{imgTitle}</h3>
-                <img src={img} alt={imgDesc} />
-                <p>{imgDesc}</p>
-            </div>
-            </>
-        )
-    }
-
-
-
-        return (
-            <>
-             <div>
-                
-             {projectTest.map((project, i) => (
+            {projectTest.map((project, i) => (
                 <React.Fragment key={i}>
                 <button
                     className={`collapsible ${activeIndex === i + 1 ? 'active' : ''}`}
@@ -107,12 +122,12 @@ const Projek = () => {
                 </div>
                 </React.Fragment>
             ))}
-             </div>
+            </div>
             </>
         );
     }
-
-    return (
+    
+        return (
         <>
             <div className='projek'>
                 <h1>Application Project</h1>
@@ -141,6 +156,7 @@ const Projek = () => {
             <br /><br /><br /><br /><br /><br /><br /><br /><br />
         </>
     );
+    
 };
 
 export default Projek;
