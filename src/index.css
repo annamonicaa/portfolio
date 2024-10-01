@@ -1,11 +1,12 @@
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Fredoka", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   color: #122253;
   background-color: #f3e5be;
+  letter-spacing: 1px;
 }
 
 * {
