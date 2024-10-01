@@ -49,6 +49,16 @@ const Projek = () => {
             img: ["./image/prj-qa-1.png", "./image/prj-qa-2.jpeg", "./image/prj-qa-3.png"],
             imgDesc: ["Tampilan dari Aplikasi Web", "Tampilan dari Apllikasi Mobile", "Sebagian dari bug yang kami temukan (Yang masih boleh ditunjukkan)"]
         },
+        {
+            id: 2,
+            title: "Katalon Sample Project",
+            desc: "Projek dari dari Katalon",
+            subDesc: "Berikut link dari aplikasi",
+            link: "https://docs.google.com/spreadsheets/d/18BD3mDYjpNlu_D_mIOkpdcgOK6TmKbd0WdoC-jqtEcQ/edit?usp=sharing",
+            imgTitle: "Beberapa dokumentasi:",
+            img: ["./image/prj-qa-4.png", "./image/prj-qa-5.png", "./image/prj-qa-6.png"],
+            imgDesc: ["Test Success", "Test Case 1", "Test Case 2"]
+        },
     ];
 
     const Collapsible = () => {
