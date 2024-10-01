@@ -11,25 +11,29 @@ const Projek = () => {
         {
             title: "tic-tac-toe",
             image: "./image/prj-img-1.png",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            desc: "Aplikasi ini dibuat mengikuti tutorial dari React JS",
+            lang: "HTML | CSS | React JS",
             link: "https://annamonicaa.github.io/tic-tac-toe/"
         },
         {
             title: "Nature Republic",
             image: "./image/prj-img-2.png",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            desc: "Aplikasi ini dibuat saat mengikuti di perkuliahan",
+            lang: "HTML | CSS | Bootstrap",
             link: "https://annamonicaa.github.io/"
         },
         {
-            title: "Aplikasi Absensi Sekolah Sabat",
+            title: "Absensi Sekolah Sabat",
             image: "./image/prj-img-3.png",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            desc: "Aplikasi ini dibuat untuk Projek Akhir (Skripsi)",
+            lang: "Laravel | HTML | CSS | JavaScript",
             link: "https://github.com/annamonicaa/absensisekolahsabat"
         },
         {
             title: "Aplikasi Cuaca",
             image: "./image/prj-img-4.png",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            desc: "Aplikasi ini menggunakan API dari openweather",
+            lang: "React JS | HTML | CSS",
             link: "https://annamonicaa.github.io/weather-app/"
         },
     ];
@@ -140,6 +144,7 @@ const Projek = () => {
                                     <div className='desc'>
                                         <div className='title'>{item.title}</div>
                                         <div>{item.desc}</div>
+                                        <div className='lang'>{item.lang}</div>
                                     </div>
                                 </div>
                             </a>

@@ -139,6 +139,17 @@
   color: #122253;
 }
 
+
+.lang {
+  background-color: #a7bcd9;
+  color: #122253;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 10px;
+  font-weight: 700;
+  
+}
+
 .desc {
   padding: 1.2em;
 }
